@@ -1,0 +1,7 @@
+## Interface: 11200
+## Title: ForeverEDCharacterBackup
+## Version: 1.00
+## Author: zong
+## SavedVariablesPerCharacter: gForeverEDCharacterBackup_Data
+
+ForeverEDCharacterBackup.lua
