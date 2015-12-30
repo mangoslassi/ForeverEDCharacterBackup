@@ -8,7 +8,11 @@ function ForeverEDCharacterBackup_ExtractBagSlots()
 		if bagslots and bagslots > 0 then
 			for slot=1,bagslots do
 				link = GetContainerItemLink(bag, slot)
-				gForeverEDCharacterBackup_Data["bag:" .. bag .. ",slot:" .. slot] = link
+				local _,q = GetContainerItemInfo(bag, slot)
+				if q == nil then
+					q = 0
+				end
+				gForeverEDCharacterBackup_Data["bag:" .. bag .. ",slot:" .. slot .. ",::count:" .. q .. "::"] = link
 			end
 		end
 	end
@@ -18,7 +22,7 @@ end
 function ForeverEDCharacterBackup_ExtractSlotItem(slotName)
 	local slotId, texture, checkRelic = GetInventorySlotInfo(slotName)
 	local itemId = GetInventoryItemLink("player", slotId)
-	gForeverEDCharacterBackup_Data[slotName .. "ID"] = itemId;
+	gForeverEDCharacterBackup_Data[slotName .. "ID"] = itemId
 end
 
 function ForeverEDCharacterBackup_ExtractSec(__s__, __h__, __x__)
