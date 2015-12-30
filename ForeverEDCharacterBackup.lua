@@ -12,7 +12,10 @@ function ForeverEDCharacterBackup_ExtractBagSlots()
 				if q == nil then
 					q = 0
 				end
-				gForeverEDCharacterBackup_Data["bag:" .. bag .. ",slot:" .. slot .. ",::count:" .. q .. "::"] = link
+				
+				if link ~= nil then
+					gForeverEDCharacterBackup_Data["bag:" .. bag .. ",slot:" .. slot] = link .. ":|Hitmcount:" .. q
+				end
 			end
 		end
 	end
